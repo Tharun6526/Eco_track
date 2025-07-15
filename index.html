@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eco Track</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e6f2e6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1{
+      text-align: center;
+      color: #907dfe;
+      margin-bottom: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: bold;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Eco Track</h1>
+    <h2>🌍 Carbon Footprint Calculator</h2>
+    <form method="post">
+      <label for="km_per_week">Kilometers driven per week:</label>
+      <input type="number" step="any" name="km_per_week" required>
+
+      <label for="fuel_efficiency">Fuel efficiency (km/liter):</label>
+      <input type="number" step="any" name="fuel_efficiency" required>
+
+      <label for="kwh_per_month">Electricity use per month (kWh):</label>
+      <input type="number" step="any" name="kwh_per_month" required>
+
+      <label for="waste_kg_per_week">Waste per week (kg):</label>
+      <input type="number" step="any" name="waste_kg_per_week" required>
+
+      <button type="submit">Calculate Footprint</button>
+    </form>
+  </div>
+</body>
+</html>

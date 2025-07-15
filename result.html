@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Carbon Results</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f1f8f2;
+      padding: 0;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #1b5e20;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      color: #444;
+      margin: 12px 0;
+    }
+    h3 {
+      color: #2e7d32;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .tip {
+      font-weight: bold;
+      text-align: center;
+      color: #e65100;
+    }
+    .success {
+      color: #388e3c;
+    }
+    a {
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+      text-decoration: none;
+      color: #1b5e20;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📊 Your Annual Carbon Emissions</h2>
+    <p>🚗 <strong>Transportation:</strong> {{ transport | round(2) }} kg CO₂</p>
+    <p>⚡ <strong>Electricity:</strong> {{ electricity | round(2) }} kg CO₂</p>
+    <p>🗑️ <strong>Waste:</strong> {{ waste | round(2) }} kg CO₂</p>
+
+    <h3>🌍 Total: {{ total | round(2) }} kg CO₂ / year</h3>
+
+    {% if total > 10000 %}
+      <p class="tip">⚠️ Your emissions are high. Try carpooling, using clean energy, or reducing waste.</p>
+    {% else %}
+      <p class="tip success">✅ Great job! You're living sustainably.</p>
+    {% endif %}
+
+    <a href="/">🔁 Calculate Again</a>
+  </div>
+</body>
+</html>
